@@ -15,7 +15,7 @@ import java.util.List;
  * CustomerController es un controlador REST que maneja las solicitudes relacionadas con los clientes.
  */
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/clientes")
 public class CustomerController {
 
     // Inyección de dependencias para el servicio de clientes

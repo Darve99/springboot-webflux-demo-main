@@ -38,7 +38,7 @@ public class CustomerDao {
         return IntStream.rangeClosed(1, 10) // Crea un rango de 1 a 10
                 .peek(CustomerDao::sleepExecution) // Simula el retardo de procesamiento
                 .peek(i -> System.out.println("processing count : " + i)) // Imprime el contador de procesamiento
-                .mapToObj(i -> new Customer(i, "customer" + i)) // Mapea cada número a un nuevo objeto Customer
+                .mapToObj(i -> new Customer(i, "Cliente" + i)) // Mapea cada número a un nuevo objeto Customer
                 .collect(Collectors.toList()); // Recoge los resultados en una lista
     }
 
@@ -52,7 +52,7 @@ public class CustomerDao {
         return Flux.range(1, 10) // Crea un rango reactivo de 1 a 10
                 .delayElements(Duration.ofSeconds(1)) // Añade un retardo de 1 segundo entre elementos
                 .doOnNext(i -> System.out.println("processing count in stream flow : " + i)) // Imprime el contador de procesamiento
-                .map(i -> new Customer(i, "customer" + i)); // Mapea cada número a un nuevo objeto Customer
+                .map(i -> new Customer(i, "Cliente" + i)); // Mapea cada número a un nuevo objeto Customer
     }
 
     /**
@@ -64,6 +64,6 @@ public class CustomerDao {
     public Flux<Customer> getCustomerList() {
         return Flux.range(1, 50) // Crea un rango reactivo de 1 a 50
                 .doOnNext(i -> System.out.println("processing count in stream flow : " + i)) // Imprime el contador de procesamiento
-                .map(i -> new Customer(i, "customer" + i)); // Mapea cada número a un nuevo objeto Customer
+                .map(i -> new Customer(i, "Cliente" + i)); // Mapea cada número a un nuevo objeto Customer
     }
 }

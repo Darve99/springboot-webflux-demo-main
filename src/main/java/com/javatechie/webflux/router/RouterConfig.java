@@ -31,10 +31,10 @@ public class RouterConfig {
     @Bean
     public RouterFunction<ServerResponse> routerFunction() {
         return RouterFunctions.route()
-                .GET("/router/customers", handler::loadCustomers) // Ruta para cargar todos los clientes
-                .GET("/router/customers/stream", streamHandler::getCustomers) // Ruta para obtener un flujo de clientes
-                .GET("/router/customer/{input}", handler::findCustomer) // Ruta para encontrar un cliente por ID
-                .POST("/router/customer/save", handler::saveCustomer) // Ruta para guardar un nuevo cliente
+                .GET("/router/clientes", handler::loadCustomers) // Ruta para cargar todos los clientes
+                .GET("/router/clientes/stream", streamHandler::getCustomers) // Ruta para obtener un flujo de clientes
+                .GET("/router/cliente/{input}", handler::findCustomer) // Ruta para encontrar un cliente por ID
+                .POST("/router/cliente/save", handler::saveCustomer) // Ruta para guardar un nuevo cliente
                 .build();
     }
 }
